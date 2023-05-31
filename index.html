@@ -1,0 +1,36 @@
+<center>
+    <form>
+        <label>Enter the row:</label>
+        <input type="number" id="row"><br><br>
+        <label>Enter the col:</label>
+        <input type="number" id="column"><br><br>
+        <input type="button" onclick="save()" value="submit">
+    </form>
+    
+    <table id="root" border="1" cellspacing="5" cellpadding="20" style="background-color: rgb(161, 107, 174);"></table><br>
+    </center>
+    
+    <script type="text/javascript">
+        let data = () => {
+            document.getElementById('row').value = '';
+            document.getElementById('column').value = '';
+        }
+    
+        let save = () => {
+            i = document.getElementById('row').value;
+            j = document.getElementById('column').value;
+            {
+                for (let row = 1; row <= i; row++) {
+                    let tr = document.createElement('tr');
+    
+                    for (let col = 1; col <= j; col++) {
+                        let td = document.createElement('td');
+                        tr.appendChild(td);
+                    }
+                    root.appendChild(tr);
+                }
+            }
+            data();
+        }
+    
+    </script>
